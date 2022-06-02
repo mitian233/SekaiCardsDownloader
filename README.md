@@ -8,7 +8,7 @@ A sample script help you download Sekai cards and convert them to jpeg.
 ```bash
 # clone this repo
 git clone https://github.com/mitian233/SekaiCardsDownloader.git
-cd tootbot
+cd SekaiCardsDownloader
 
 # install required python modules
 pip3 install -r requirements.txt
