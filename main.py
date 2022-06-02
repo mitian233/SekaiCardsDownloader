@@ -10,6 +10,7 @@ os.environ["https_proxy"] = "http://127.0.0.1:18899"
 characterNumber = 17 #Check the role number in the url
 picNumber = 17 #Check the total number of cards in the url
 saveNumber = 1 #Specify the naming start number
+refer_url = 'minio.dnaroma.eu' #You need to change this variable if the CDN domain name changes
 #==========================================================
 
 ua = {'User-Agent': 'Mozilla/5.0'}
@@ -49,11 +50,11 @@ def downloader(url, saveNumber):
 for i in range(1 , picNumber + 1):
     pic = rename(i)
     #Download normal card image
-    url = "https://minio.dnaroma.eu/sekai-assets/character/member/res" + character + "_no" + pic + "_rip/card_normal.png"
+    url = "https://" + refer_url + "/sekai-assets/character/member/res" + character + "_no" + pic + "_rip/card_normal.png"
     if downloader(url, saveNumber)==200:
         saveNumber += 1
     #Download after training card image
-    url = "https://minio.dnaroma.eu/sekai-assets/character/member/res" + character + "_no" + pic + "_rip/card_after_training.png"
+    url = "https://" + refer_url + "/sekai-assets/character/member/res" + character + "_no" + pic + "_rip/card_after_training.png"
     if downloader(url, saveNumber)==200:
         saveNumber += 1
 print("\033[32m[SUCCESS]\033[0mDownload complete!")
